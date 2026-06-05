@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculadora_Propinas.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+            <Label Text="Calculadora de Propinas" FontSize="28" HorizontalOptions="Center" FontAttributes="Bold" />
+
+            <Entry x:Name="txtCuenta" Placeholder="Monto de la cuenta" Keyboard="Numeric" TextChanged="CalcularTodo" />
+
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Propina %:" VerticalOptions="Center" WidthRequest="100" />
+                <Stepper x:Name="stpPropina" Minimum="0" Maximum="100" Increment="5" ValueChanged="CalcularTodo" />
+                <Label x:Name="lblPropina" Text="0%" VerticalOptions="Center" FontAttributes="Bold" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Personas:" VerticalOptions="Center" WidthRequest="100" />
+                <Stepper x:Name="stpPersonas" Minimum="1" Maximum="50" Value="1" ValueChanged="CalcularTodo" />
+                <Label x:Name="lblPersonas" Text="1" VerticalOptions="Center" FontAttributes="Bold" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="15">
+                <Label Text="Redondear total" VerticalOptions="Center" />
+                <Switch x:Name="swRedondeo" Toggled="CalcularTodo" />
+            </HorizontalStackLayout>
+
+            <BoxView Color="Gray" HeightRequest="1" HorizontalOptions="Fill" />
+
+            <Label x:Name="lblTotal" Text="Total por Persona: $0.00" FontSize="22" HorizontalOptions="Center" TextColor="Green" FontAttributes="Bold" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
